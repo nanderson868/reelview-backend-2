@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  title: ReelView API
+  description: API for comparing movie watchlists.
+  version: "1.0.0"
+servers:
+  - url: "https://api.reelview.io/"
+paths:
+  /api:
+    get:
+      summary: API Root
+      description: Returns a welcome message from the Watchlist Comparator API.
+      operationId: getApiRoot
+      responses:
+        "200":
+          description: Successfully returns a welcome message.
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "Welcome to Watchlist Comparator!"
+  /api/compare:
+    post:
+      summary: Compares user watchlists
+      description: Accepts a list of usernames and compares their movie watchlists.
+      operationId: compareUserWatchlists
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                usernames:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  movies:
+                    type: object
+                  user_details:
+                    type: object
+        "400":
+          description: Bad request, incorrect input format
+        "500":
+          description: Server error

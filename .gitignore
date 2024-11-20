@@ -1,0 +1,10 @@
+venv/
+pyvenv/
+lib/
+bin/
+app/__pycache__/
+*.py[cod]
+*$py.class
+app/__pycache__
+__pycache__/
+.env
