@@ -120,19 +120,43 @@ Security and Performance:
 
 1. Clone the repository
 
-```bash
-git clone
-```
-
-2. Install dependencies
-
-```bash
+```zsh
+# Clone the Repository:
+git clone <repository-url>
+cd <repository-url>
+# Create a Virtual Environment:
+python -m venv venv
+# Activate the Virtual Environment:
+source venv/bin/activate
+# Install Requirements:
 pip install -r requirements.txt
+# Check for Outdated Packages:
+pip list --outdated
+# Upgrade Outdated Packages (optional):
+pip install --upgrade -r requirements.txt
+# Update requirements.txt (if packages were upgraded):
+pip freeze > requirements.txt
 ```
 
-3. Run the application
+2. Environment Configuration:
 
-```bash
+Ensure your .env file is correctly configured
+
+- DATABASE_URL_PRODUCTION
+- DATABASE_URL_DEVELOPMENT
+- FLASK_CONFIG
+- REDIS_TLS_URL
+- REDIS_URL
+
+3. Run Tests:
+
+```zsh
+pytest
+```
+
+4. Run the application
+
+```zsh
 python run.py
 ```
 
@@ -140,19 +164,19 @@ python run.py
 
 1. Clone the repository
 
-```bash
+```zsh
 git clone
 ```
 
 2. Install dependencies
 
-```bash
+```zsh
 npm install
 ```
 
 3. Run the application
 
-```bash
+```zsh
 npm run dev
 ```
 
