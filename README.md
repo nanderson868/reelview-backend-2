@@ -142,11 +142,13 @@ pip freeze > requirements.txt
 
 Ensure your .env file is correctly configured
 
-- DATABASE_URL_PRODUCTION
-- DATABASE_URL_DEVELOPMENT
+```zsh
+DATABASE_URL_PRODUCTION
+DATABASE_URL_DEVELOPMENT
 - FLASK_CONFIG
-- REDIS_TLS_URL
-- REDIS_URL
+REDIS_TLS_URL
+REDIS_URL
+```
 
 3. Run Tests:
 
